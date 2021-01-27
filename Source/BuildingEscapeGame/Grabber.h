@@ -18,7 +18,6 @@ public:
 	// Sets default values for this component's properties
 	UGrabber();
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	FVector GetTraceEnd() const;
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -31,7 +30,8 @@ private:
 	UPhysicsHandleComponent* PhysicsHandle =nullptr;
 	UInputComponent* InputComponent = nullptr;	
 	FHitResult GetFirstPhysicsBodyInReach() const;
-	
+	FVector GetTraceEnd() const;
+	FVector GetWorldPosition() const;
 	void Grab();
 	void Release();
 	void FindPhysicsHandle();
